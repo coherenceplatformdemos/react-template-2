@@ -1,12 +1,14 @@
-FROM node:14.17.3-buster
+FROM node:16
 
 WORKDIR /app
 
-COPY package.json package.json 
-COPY package-lock.json package-lock.json 
+COPY package.json package.json
+COPY yarn.lock yarn.lock
 
-RUN npm ci --production
-#RUN npm install
+RUN yarn install
 
 COPY . .
 
+RUN yarn build
+
+CMD ["yarn", "preview"]
