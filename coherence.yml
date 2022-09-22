@@ -1,11 +1,10 @@
 frontend:
   type: frontend
-  index_file_name: index.html
   url_path: /
   repo_path: frontend
-  assets_path: build
+  assets_path: dist
   local_packages: ["node_modules"]
-  install: ["npm", "install"]
-  build: ["npm", "run", "build"]
-  dev: ["npm", "start"]
-  
+  install: ["yarn", "install"]
+  build: ["yarn", "build"]
+  dev: ["yarn", "dev"]
+
